@@ -6,6 +6,7 @@ public class DayOfWeekMain {
 
         res = res - day.ordinal() * 8;
         if (res < 0) res = 0;
+        if (res == 0) System.out.println("Сегодня выходной день");
 
         return res;
     }
