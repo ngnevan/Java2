@@ -1,7 +1,6 @@
 package Lesson_6.Client;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,25 +8,13 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    Controller c;
-
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader();
-
-        Parent root = loader.load(getClass().getResourceAsStream("sample.fxml"));
-        primaryStage.setTitle("Chat 2k19");
-        c = loader.getController();
-
-        Scene scene = new Scene(root, 350, 350);
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Hello World");
+        Scene scene = new Scene(root, 350, 375);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        primaryStage.setOnCloseRequest(event -> {
-            c.Dispose();
-            Platform.exit();
-            System.exit(0);
-        });
     }
 
 
